@@ -4,11 +4,13 @@ import json
 import re
 import os
 from collections import defaultdict
+from dotenv import load_dotenv
+load_dotenv()  # 加载 .env 文件中的变量到环境变量
 
 # ---------- 配置 ----------
 # 从环境变量读取密钥（部署时设置）
-AMAP_KEY = os.getenv("AMAP_KEY", "c07f4b45157e4e61f3b3b45efa29b136")   # 默认值仅供本地测试
-ZHIPU_API_KEY = os.getenv("ZHIPU_API_KEY", "543a855ad8074bbea189fee54b71a05c.PzrCUH20A55hqElb")
+AMAP_KEY = os.getenv("AMAP_KEY")
+ZHIPU_API_KEY = os.getenv("ZHIPU_API_KEY")
 
 ZHIPU_URL = "https://open.bigmodel.cn/api/paas/v4/chat/completions"
 
